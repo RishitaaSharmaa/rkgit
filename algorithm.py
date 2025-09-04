@@ -11,7 +11,7 @@ llm = ChatGroq(api_key=api_key,model_name="meta-llama/llama-4-scout-17b-16e-inst
 )
 
 template = """
-You are an expert in Rainwater Harvesting Systems (RRWHS) and Artificial Recharge (AR).
+You are an expert in Rainwater Harvesting Systems and Artificial Recharge.
 Based on the user's inputs, recommend the most suitable system.
 
 Inputs:
@@ -24,8 +24,8 @@ Inputs:
 - Roof area (sq.m): {roof_area}
 
 Task:
-Recommend a single system which is best for the user fufilling the use of both rooftop rainwater harvesting system and aritficial recharge.
-And the Estimate cost range. 
+Recommend a rooftop rainwater harvesting system and aritficial recharge which are compatible and best fit for the user.
+And the Estimate cost range.
 Just give the relevant answer and no additional information.
 """
 
