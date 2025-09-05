@@ -24,9 +24,11 @@ Inputs:
 - Roof area (sq.m): {roof_area}
 
 Task:
-Recommend a rooftop rainwater harvesting system and aritficial recharge which are compatible and best fit for the user.
-And the Estimate cost range.
-Just give the relevant answer and no additional information.
+-Feasibility check for rooftop rainwater harvesting.
+- Suggested type of RTRWH/Artificial Recharge structures.
+- Runoff generation capacity.
+- Recommended dimensions of recharge pits, trenches, and shafts.
+- Cost estimation and cost-benefit analysis.
 """
 
 prompt = PromptTemplate(
