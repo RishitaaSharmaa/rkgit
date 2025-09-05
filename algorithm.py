@@ -29,13 +29,13 @@ Inputs:
 
 Task:
 - Feasibility check for rooftop rainwater harvesting.
-- Suggested type of RTRWH and Artificial Recharge structures.
+- Suggested type of rooftop rainwater system and Artificial Recharge structures according to their location, rooftype, roofarea and number of dwellers. 
 - Runoff generation capacity.
 - Recommended dimensions of recharge pits, trenches, and shafts.
-- Cost estimation and cost-benefit analysis.
+- Cost estimation and cost-benefit(in one year) analysis.
 - Estimate how many days this water will last.
 - Predict future harvest from rainfall.
-- Calculate money saved.
+- Calculate money saved(in one year).
 - Calculate daily water demand for the household.
 - Explain impact in user-friendly language.
 
@@ -58,10 +58,10 @@ user_inputs = {
     "groundwater_level": "25 meters",
     "roof_area": "120",
     "current_volume": 200,
-    "dwellers": 12,
+    "dwellers": 4,
     "rainfall": 8,
     "roof_area": 15,   
-    "tariff": 15
+    "tariff": 1500
 }
 
 response = chain.invoke(user_inputs)
