@@ -11,48 +11,42 @@ llm = ChatGroq(api_key=api_key,model_name="meta-llama/llama-4-scout-17b-16e-inst
 )
 
 template = """
-You are a water sustainability expert. 
-Using the provided inputs, calculate and explain the household's water sustainability projection.
-
+You are a water resource advisor.
 Inputs:
-- Current stored water: {current_storage} litres
+- Current harvested water: {current_volume} L
+- Household size: {dwellers}
+- Avg daily demand/person: 135 L
+- Forecasted rainfall: {rainfall} mm
 - Roof area: {roof_area} m²
-- Runoff coefficient: {runoff_coeff}
-- Forecasted rainfall (mm over next 7 days): {rainfall_forecast}
-- Number of dwellers: {dwellers}
-- Per capita demand: {lpcd} litres/day
-- Water tariff: ₹{tariff}/kL
+- Water tariff: {tariff} ₹/KL
 
 Task:
-1. Estimate additional water that can be collected from forecasted rainfall.
-2. Calculate daily water demand for the household.
-3. Estimate how many days the total water will last.
-4. Estimate total water savings and monetary savings.
-5. Explain the environmental impact in simple terms.
-6. Present results clearly in bullet points with numbers.
+1. Estimate how many days this water will last.
+2. Predict future harvest from rainfall.
+3. Calculate money saved.
+4. Calculate daily water demand for the household.
+5. Explain impact in user-friendly language.
+
+Provide the answer in short actionable insights.
 """
 
 prompt = PromptTemplate(
     input_variables=[
-        "current_storage", "roof_area", "runoff_coeff", "rainfall_forecast",
-        "dwellers", "lpcd", "tariff"
+        "current_volume", "dwellers", "rainfall", "roof_area",
+        "tariff"
     ],
     template=template
 )
 
-
 chain = prompt|llm
 
 user_inputs = {
-    "current_storage": 2000,
-    "roof_area": 120,
-    "runoff_coeff": 0.8,
-    "rainfall_forecast": 15,   
-    "dwellers": 6,
-    "lpcd": 135,
+    "current_volume": 200,
+    "dwellers": 12,
+    "rainfall": 8,
+    "roof_area": 15,   
     "tariff": 15
 }
-
 
 response = chain.invoke(user_inputs)
 print("Recommendation:\n", response.content)
