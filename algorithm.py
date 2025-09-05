@@ -24,7 +24,7 @@ Inputs:
 - Roof area (sq.m): {roof_area}
 
 Task:
--Feasibility check for rooftop rainwater harvesting.
+- Feasibility check for rooftop rainwater harvesting.
 - Suggested type of RTRWH and Artificial Recharge structures.
 - Runoff generation capacity.
 - Recommended dimensions of recharge pits, trenches, and shafts.
