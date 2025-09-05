@@ -25,7 +25,7 @@ Inputs:
 
 Task:
 -Feasibility check for rooftop rainwater harvesting.
-- Suggested type of RTRWH/Artificial Recharge structures.
+- Suggested type of RTRWH and Artificial Recharge structures.
 - Runoff generation capacity.
 - Recommended dimensions of recharge pits, trenches, and shafts.
 - Cost estimation and cost-benefit analysis.
@@ -50,4 +50,4 @@ user_inputs = {
 }
 
 response = chain.invoke(user_inputs)
-print("💧 Recommendation:\n", response.content)
+print("Recommendation:\n", response.content)
